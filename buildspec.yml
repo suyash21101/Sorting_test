@@ -8,6 +8,8 @@ phases:
 
       # Upgrade AWS CLI to the latest version
       - pip install --upgrade awscli
+      - pip install Spark
+      - pip install pyspark
 
   pre_build:
     commands:
