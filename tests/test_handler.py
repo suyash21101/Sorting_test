@@ -17,23 +17,23 @@ def bubbleSort(arr):
 
 # COMMAND ----------
 
-arr = [3, 2, 1]
+arr = [3, 2, 1, 8, 10, 3, 19, 88, 92, 100, 86, 77, 28, 11]
 bubbleSort(arr)
 
 # COMMAND ----------
 
 # Import PySpark
-import pyspark
-from pyspark.sql import SparkSession
+#import pyspark
+#from pyspark.sql import SparkSession
 
 #Create SparkSession
-spark = SparkSession.builder.master("local[1]").appName("SparkByExamples.com").getOrCreate()
+#spark = SparkSession.builder.master("local[1]").appName("SparkByExamples.com").getOrCreate()
 
 # COMMAND ----------
 
 
-df = spark.table("hive_metastore.default.sorting_ds_1_csv")
+#df = spark.table("hive_metastore.default.sorting_ds_1_csv")
 
-l1 = df.select('Sort').rdd.flatMap(lambda x: x).collect()
-Lib.bubbleSort(l1) 
+#l1 = df.select('Sort').rdd.flatMap(lambda x: x).collect()
+
 
