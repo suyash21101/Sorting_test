@@ -19,6 +19,7 @@ def bubbleSort(arr):
 
 arr = [3, 2, 1, 8, 10, 3, 19, 88, 92, 100, 86, 77, 28, 11]
 bubbleSort(arr)
+print(arr)
 
 # COMMAND ----------
 
