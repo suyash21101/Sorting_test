@@ -1,17 +1,15 @@
-import unittest
-import index
+# Databricks notebook source
+# MAGIC %run "./Lib"
 
+# COMMAND ----------
 
-class TestHandlerCase(unittest.TestCase):
+arr = [3, 2, 1]
+bubbleSort(arr)
 
-    def test_response(self):
-        print("testing response.")
-        result = index.handler(None, None)
-        print(result)
-        self.assertEqual(result['statusCode'], 200)
-        self.assertEqual(result['headers']['Content-Type'], 'application/json')
-        self.assertIn('Hello World', result['body'])
+# COMMAND ----------
 
+df = spark.table("hive_metastore.default.sorting_ds_1_csv")
 
-if __name__ == '__main__':
-    unittest.main()
+l1 = df.select('Sort').rdd.flatMap(lambda x: x).collect()
+bubbleSort(l1) 
+
