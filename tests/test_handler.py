@@ -1,6 +1,6 @@
 # Databricks notebook source
 # MAGIC %run "./Lib"
-
+from Lib import bubbleSort
 # COMMAND ----------
 
 arr = [3, 2, 1]
